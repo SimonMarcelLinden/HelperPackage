@@ -30,7 +30,7 @@ abstract class Preset {
      */
     private static function createDirectoryIfNotExists(String $path): void {
         $filesystem = new Filesystem;
-        if (! $filesystem->isDirectory($directory = resource_path( $path ))) {
+        if (! $filesystem->isDirectory($directory = $path )) {
             $filesystem->makeDirectory($directory, 0755, true);
         }
     }
